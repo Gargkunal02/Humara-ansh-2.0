@@ -1,0 +1,511 @@
+{% load static %}
+
+<html> 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Bingo One page parallax responsive HTML Template ">
+  
+  <meta name="author" content="Themefisher.com">
+
+  <title>HumaraAnsh</title>
+
+<!-- Mobile Specific Meta
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{% static '/signup/images/favicon.png' %}" />
+  
+  <!-- CSS
+  ================================================== -->
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="{% static '/signup/plugins/themefisher-font/style.css' %}">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="{% static '/signup/plugins/bootstrap/css/bootstrap.min.css' %}">
+  <!-- Lightbox.min css -->
+  <link rel="stylesheet" href="{% static '/signup/plugins/lightbox2/dist/css/lightbox.min.css' %}">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static '/signup/plugins/animate/animate.css' %}">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="{% static '/signup/plugins/slick/slick.css' %}">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static '/signup/css/style.css' %}">  
+  <!--Font awesome icons-->
+  <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+
+
+</head>
+
+<body id="body">
+
+ <!--
+  Start Preloader
+  ==================================== -->
+  <div id="preloader">
+    <div class='preloader'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div> 
+  <!--
+  End Preloader
+  ==================================== -->
+
+
+  
+
+<!--
+Fixed Navigation
+==================================== -->
+<header class="navigation fixed-top">
+  <div class="container">
+    <!-- main nav -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <!-- logo -->
+      <a class="navbar-brand logo" href="{% url 'signup' %}">
+        <img class="logo-default" src="{% static '\signup\images\Logo (2).png' %}" alt="logo" style="width: 150px;"/>
+        <img class="logo-white" src="{% static '\signup\images\whitelogo.png' %}" alt="logo" style="width: 150px;"/>
+      </a>
+      <!-- /logo -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ml-auto text-center">
+          <li class="nav-item dropdown deactivate">
+            <a class="nav-link" href="{% url 'signup' %}" id="navbarDropdown" role="button" 
+              aria-haspopup="true" aria-expanded="false">
+              Home
+            </a>
+            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="index.html">Homepage</a>
+              <a class="dropdown-item" href="onepage-slider.html">Onepage</a>
+              <a class="dropdown-item" href="onepage-text.html">Onepage 2</a>
+            </div>  -->
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#service">Services</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#testimonial">Testimonial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'portal:team' %}">Team</a>
+          </li>
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="pricing.html">Pricing</a>
+          </li> -->
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'portal:Contact_Us' %}">Contact</a>
+          </li>
+		  <li class="nav-item ">
+            <a class="nav-link" class="btn btn-transparent" href="{% url 'portal:login' %}">Login</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Pages
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="404.html">404 Page</a>
+              <a class="dropdown-item" href="blog.html">Blog Page</a>
+              <a class="dropdown-item" href="single-post.html">Blog Single Page</a>
+            </div> -->
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /main nav -->
+  </div>
+</header>
+<!--
+End Fixed Navigation
+==================================== -->
+
+ <!--
+Welcome Slider
+==================================== -->
+
+ <section class="hero-area">
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-md-12">
+ 				<div class="block">
+ 					<h1 class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s" style="margin-top: 120px;">Register Now <br> </h1>
+ 					<p class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".5s">We aims to bridge the gap between doctors
+              and users who want to commence or become a part of the beautiful excursion of parenthood.
+ 					</p>
+ 					<ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
+ 						<li class="list-inline-item">
+ 							<a data-scroll class="btn btn-main" href="{% url 'portal:patient_signup' %}">Parent</a>
+ 						</li>
+ 						<li class="list-inline-item">
+ 							<a data-scroll class="btn btn-transparent" href="{% url 'portal:doctor_signup' %}">Doctor</a>
+ 						</li>
+ 					</ul>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </section>
+
+<!--
+Start About Section
+==================================== -->
+<section class="service-2 section" id="service">
+  <div class="container" >
+    <div class="row">
+
+      <div class="col-12">
+        <!-- section title -->
+        <div class="title text-center">
+          <h2>What Do We Offer</h2>
+          <p> We aim to build a one stop 
+            destination for all queries one can possibly encounter during this rollercoaster phase of life.<br>
+         </p>
+          <div class="border"></div>
+        </div>
+        <!-- /section title -->
+      </div>
+
+      <!-- <div class="col-md-4 text-center">
+        <!-- <img src="{% static '\signup\images\about\member.jpg' %}" class="inline-block" alt="Error"> -->
+      <!-- </div> --> 
+      <!-- <div class="col-md-8"> -->
+        <div class="row text-center">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <i class="tf-ion-ios-alarm-outline"></i>
+              <h4>Connect with a Doctor</h4>
+              <p>
+                Allows the patients and doctors to schedule an appointment in a shared calendar. The meeting can be both online or offline.                
+                </p>
+            </div>
+          </div><!-- END COL -->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <i class="tf-ion-ios-briefcase-outline"></i>
+              <h4>Parental Education</h4>
+              <p>Gives information about 
+                <br>-Health and Nutrition for the parent and child
+                <br>-Government and Insurance Policies
+                <br>-Granny’s hacks
+                </p>
+            </div>
+          </div><!-- END COL -->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <i class="tf-ion-ios-email-outline"></i>
+              <h4>Video Guide</h4>
+              <p>Recommends the user with video content based on their current stage of pregnancy</p>
+            </div>
+          </div><!-- END COL -->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <i class="tf-ion-ios-locked-outline"></i>
+              <h4>Buy Medicines</h4>
+              <p>Medicines prescribed by the doctor will be home delivered to you just after a few clicks</p>
+            </div>
+          </div><!-- END COL -->
+        </div>
+      <!-- </div> -->
+    </div> <!-- End row -->
+  </div> <!-- End container -->
+</section> <!-- End section -->
+
+<!--
+Start About Section
+==================================== -->
+<section class="about-2 section" id="about">
+	<div class="container">
+		<div class="row">
+
+			<!-- section title -->
+			<div class="col-12">
+				<div class="title text-center">
+					<h2>About Us</h2>
+					<p> From pre to post, Humara Ansh is dedicated to remain a constant. <br>
+            A virtual journal you would want to track and cherish years later! </p>
+					<div class="border"></div>
+				</div>
+			</div>
+			<!-- /section title -->
+
+			<div class="col-md-6">
+				<img src="{% static '\signup\images\about\mom.jpg' %}" class="img-fluid" alt="Error">
+			</div>
+			<div class="col-md-6">
+				<ul class="checklist">
+					<li>Different portals for different users (Doctors and Parents)</li>
+					<li>Doctor can upload patient’s reports,ultrasounds images,etc and can prescribe required medicines</li>
+					<li>Parents can view the report and respond personally</li>
+					<li>Covers every important information about vaccines recommended for a newborn along with their schedules</li>
+					<li>Video recommendations based on your month of pregnancy which cover the type of food,exercises and everything else you need to know.</li>
+          <li>Your entire journey logged with us.</li>
+				</ul>
+				<!-- <a href="#" class="btn btn-main mt-20">Learn More</a> -->
+			</div>
+		</div> <!-- End row -->
+	</div> <!-- End container -->
+</section> <!-- End section -->
+
+<!--
+Start Call To Action
+==================================== -->
+<section class="call-to-action section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2>Let's Create Something Together</h2>
+				<!-- <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin bibendum auctor, <br> nisi elit consequat ipsum, nesagittis sem nid elit. Duis sed odio sitain elit.</p> -->
+				<a href="{% url 'portal:Contact_Us' %}" class="btn btn-main">Contact Us</a>
+			</div>
+		</div> 		<!-- End row -->
+	</div>   	<!-- End container -->
+</section>   <!-- End section -->
+
+<!--
+		Start Counter Section
+		==================================== -->
+		
+		<section  class="counter-wrapper section-sm" >
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="title">
+							<h2>Our Achievements</h2>
+							<p>We are proud of the impact we create!</p>
+						</div>
+					</div>
+					<!-- first count item -->
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center " >
+						<div class="counters-item">
+							<i class="tf-ion-ios-alarm-outline"></i>
+							<div>
+							    <span class="counter" data-count="15000">0</span>
+							</div>
+							<h3>Happy Parents</h3>
+						</div>
+					</div>
+					<!-- end first count item -->
+				
+					<!-- second count item -->
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center " >
+						<div class="counters-item">
+							<i class="tf-ion-ios-analytics-outline"></i>
+							<div>
+							    <span class="counter" data-count="150">0</span>
+							</div>
+							<h3>Doctors Connected</h3>
+						</div>
+					</div>
+					<!-- end second count item -->
+				
+					<!-- third count item -->
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center "  >
+						<div class="counters-item">
+							<i class="tf-ion-ios-compose-outline"></i>
+							<div>
+							    <span class="counter" data-count="690">0</span>
+							</div>
+				            <h3>Positive feedback</h3>
+							
+						</div>
+					</div>
+					<!-- end third count item -->
+					
+					<!-- fourth count item -->
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+						<div class="counters-item kill-border">
+							<i class="tf-ion-ios-bolt-outline"></i>
+							<div>
+							    <span class="counter" data-count="420">0</span>
+							</div>
+							<h3>Cups of Coffee</h3>
+						</div>
+					</div>
+					<!-- end fourth count item -->
+				</div> 		<!-- end row -->
+			</div>   	<!-- end container -->
+		</section>   <!-- end section -->
+
+<!-- Start Testimonial
+=========================================== -->
+		
+<section class="testimonial section" id="testimonial">
+  <div class="container">
+    <div class="row">				
+      <div class="col-lg-12">
+        <!-- testimonial wrapper -->
+        <div class="testimonial-slider">
+          <!-- testimonial single -->
+          <div class="item text-center">
+             <h2 style="color: white;">Testimonial</h2>
+            <i class="tf-ion-chatbubbles"></i>
+            <!-- client info -->
+            <div class="client-details">
+              <p>HumaraAnsh has helped our parenthood journey a lot. The fact that I have an entire log of my reports is very handy.Since I don't have any senior citizen at my home, I am thankful to HumaraAnsh for the Granny's Hack section, which had all the old tips and tricks and they actually worked for us.</p>
+            </div>
+            <!-- /client info -->
+            <!-- client photo -->
+            <div class="client-thumb">
+              <img src="{% static '\signup\images\client-logo\1517270798857.jfif' %}" class="img-fluid" alt="">
+            </div>
+            <div class="client-meta">
+              <h3>Komal Singh Gill</h3>
+              <span>Research Scholar,Thapar</span>
+            </div>
+            <!-- /client photo -->
+          </div>
+          <!-- /testimonial single -->
+      
+          <!-- testimonial single -->
+          {% comment %} <div class="item text-center">
+            <h2 style="color: white;">Testimonial</h2>
+            <i class="tf-ion-chatbubbles"></i>
+            <!-- client info -->
+            <div class="client-details">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?</p>
+            </div>
+            <!-- /client info -->
+            <!-- client photo -->
+            <div class="client-thumb">
+              <img src="images/client-logo/clients-2.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="client-meta">
+              <h3>Emma Harrison</h3>
+              <span>CEO , Company Name</span>
+            </div>
+            <!-- /client photo -->
+          </div>
+          <!-- /testimonial single -->
+        
+          <!-- testimonial single -->
+          <div class="item text-center">
+            <h2 style="color: white;">Testimonial</h2>
+            <i class="tf-ion-chatbubbles"></i>
+            <!-- client info -->
+            <div class="client-details">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde corporis labore, enim, voluptatum officiis voluptates alias natus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quia?</p>
+            </div>
+            <!-- /client info -->
+            <!-- client photo -->
+            <div class="client-thumb">
+              <img src="images/client-logo/clients-3.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="client-meta">
+              <h3>Alexander Lucas</h3>
+              <span>CEO , Company Name</span>
+            </div>
+            <!-- /client photo -->
+          </div> {% endcomment %}
+          <!-- /testimonial single -->
+        </div>
+      </div> 		<!-- end col lg 12 -->
+    </div>	    <!-- End row -->
+  </div>       <!-- End container -->
+</section>    <!-- End Section -->
+
+
+  <footer id="footer" class="bg-one">
+    <div class="top-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <h3>About</h3>
+            <p>From pre to post, Humara Ansh is dedicated to remain a constant. <br>
+              A virtual journal you would want to track and cherish years later!</p>
+          </div>
+          <!-- End of .col-sm-3 -->
+  
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <ul>
+              <li><h3>Our Services</h3></li>
+              <li><a href="#">Connect with a Doctor</a></li>
+              <li><a href="#">Parental Education</a></li>
+              <li><a href="#">Video Guide</a></li>
+              <li><a href="#">Buy Medicines</a></li>
+            </ul>
+          </div>
+          <!-- End of .col-sm-3 -->
+  
+          <!-- <div class="col-sm-3 col-md-3 col-lg-3">
+            <ul>
+              <li><h3>Quick Links</h3></li>
+              <li><a href="#"></a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">FAQ’s</a></li>
+              <li><a href="#">Badges</a></li>
+            </ul> -->
+          <!-- </div> -->
+          <!-- End of .col-sm-3 -->
+  
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <ul>
+              <li><h3>Connect with us Socially</h3></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Youtube</a></li>
+              <li><a href="#">Pinterest</a></li>
+            </ul>
+          </div>
+          <!-- End of .col-sm-3 -->
+  
+        </div>
+      </div> <!-- end container -->
+    </div>
+  
+  <div class="footer-bottom">
+    <h5>@ Copyright 2021. All rights reserved.</h5>
+    <h6>Design and Developed by <a href="">TECHNI-HACK</a></h6>
+  </div>
+</footer> <!-- end footer -->
+
+
+    <!-- end Footer Area
+    ========================================== -->
+
+
+    
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    <!-- Main jQuery -->
+    <script src="{% static '/signup/plugins/jquery/jquery.min.js' %}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+    <script  src="{% static '/signup/plugins/google-map/gmap.js' %}"></script>
+
+    <!-- Form Validation -->
+    <script src="{% static '/signup/plugins/form-validation/jquery.form.j' %}s"></script> 
+    <script src="{% static '/signup/plugins/form-validation/jquery.validate.min.js' %}"></script>
+    
+    <!-- Bootstrap4 -->
+    <script src="{% static '/signup/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- Parallax -->
+    <script src="{% static '/signup/plugins/parallax/jquery.parallax-1.1.3.js' %}"></script>
+    <!-- lightbox -->
+    <script src="{% static '/signup/plugins/lightbox2/dist/js/lightbox.min.js' %}"></script>
+    <!-- Owl Carousel -->
+    <script src="{% static '/signup/plugins/slick/slick.min.js' %}"></script>
+    <!-- filter -->
+    <script src="{% static '/signup/plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+    <!-- Smooth Scroll js -->
+    <script src="{% static '/signup/plugins/smooth-scroll/smooth-scroll.min.js' %}"></script>
+    
+    <!-- Custom js -->
+    <script src="{% static '/signup/js/script.js' %}"></script>
+
+  </body>
+  </html>
+

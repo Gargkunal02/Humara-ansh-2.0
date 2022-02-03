@@ -1,0 +1,85 @@
+{% extends 'portal/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+{% if user.is_authenticated %}
+<h1 style="margin-top: 100px;">Patients History</h1>
+<ul style="list-style-type: none;">	
+<li>
+<section id="doctors" class="doctors">
+      <div class="container">
+        <div class="row">
+          {% for patient in object_list %}
+          {% if user.id == patient.choice %}
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="{% static 'assets/img/doctors/doctors-1.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Patient Name: {{ patient.user.first_name }} {{ patient.user.last_name }}</h4>
+				<h5>Pregnancy Month: {{ patient.pregnancy_month }} </h5><br>
+                <a href="{% url 'reports:patient_history_detail' patient.pk %}"><button type="button" class="btn btn-outline-info">Patient History</button></a>
+                <!-- <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          {% endif %}
+         {% endfor %}
+        </div>
+      </div>
+    </section>
+	{% comment %} <b>{{ patient.user.first_name }} {{ patient.user.last_name }}</b> 
+	<br><br>
+	<a href="{% url 'reports:patient_history_detail' patient.pk %}">view patient history</a>
+	<hr> {% endcomment %}
+</li>
+</ul>
+{% endif %}
+</div>
+
+
+ <!-- ======= Hero Section ======= -->
+ <!-- End Why Us Section -->
+
+    <!-- ======= About Section ======= -->
+   
+    <!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+ <!-- End Services Section -->
+
+    <!-- ======= Appointment Section ======= -->
+
+    <!--End Appointment Section -->
+
+    <!-- ======= Departments Section ======= -->
+ <!-- End Departments Section -->
+
+    <!-- ======= Doctors Section ======= -->
+   <!-- End Doctors Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+<!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+ 
+    <!-- End Testimonials Section -->
+
+    <!-- ======= Gallery Section ======= -->
+<!-- End Gallery Section -->
+
+    <!-- ======= Contact Section ======= -->
+   
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  
+</body>
+{% endblock %}
+</html>

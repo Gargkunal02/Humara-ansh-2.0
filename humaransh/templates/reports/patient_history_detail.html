@@ -1,0 +1,79 @@
+{% extends 'portal/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+{% if user.is_authenticated %}
+<h1 style="margin-top: 100px;">Patient's Reports</h1>
+<ul style="list-style-type: none;">
+
+<li>
+	<section id="doctors" class="doctors">
+		<div class="container">
+		  <div class="row">
+			{% for post in object_list %}
+{% if patientid == post.patient.user.id %}	
+			<div class="col-lg-6">
+			  <div class="member d-flex align-items-start">
+				{% comment %} <div class="pic"><img src="{% static 'assets/img/doctors/doctors-1.jpg' %}" class="img-fluid" alt=""></div> {% endcomment %}
+				<div class="member-info">
+					<p>Date: <b>{{ post.post_date }}</b></p>
+					<p>Report Title: <b>{{ post.title }}</b></p>
+					<p>Patient: <b>{{ post.patient.user.first_name }} {{ post.patient.user.last_name }}</b></p>
+					<p>Doctor: <b>Dr. {{ post.doctor.user.first_name }} {{ post.doctor.user.last_name }}</b></p>
+		<br>
+		<a href="{% url 'reports:report_details_doc' post.pk %}"><button type="button" class="btn btn-outline-info">view report</button></a>
+				  {% comment %} <h4>Patient Name: {{ patient.user.first_name }} {{ patient.user.last_name }}</h4>
+				  <h5>Pregnancy Month: {{ patient.pregnancy_month }} </h5><br>
+				  <a href="{% url 'reports:patient_history_detail' patient.pk %}"><button type="button" class="btn btn-outline-info">Patient History</button></a>
+				  <!-- <div class="social"> {% endcomment %}
+					{% comment %} <a href=""><i class="ri-twitter-fill"></i></a>
+					<a href=""><i class="ri-facebook-fill"></i></a>
+					<a href=""><i class="ri-instagram-fill"></i></a>
+					<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+				  </div> --> {% endcomment %}
+				</div>
+			  </div>
+			</div>
+			{% endif %}
+{% endfor %}
+		  </div>
+		</div>
+	  </section>
+	
+</li>
+</ul>
+{% endif %}
+</div>
+{% endblock %}
+
+
+<section id="doctors" class="doctors">
+	<div class="container">
+	  <div class="row">
+		{% for patient in object_list %}
+		{% if user.id == patient.choice %}
+
+		<div class="col-lg-6">
+		  <div class="member d-flex align-items-start">
+			<div class="pic"><img src="{% static 'assets/img/doctors/doctors-1.jpg' %}" class="img-fluid" alt=""></div>
+			<div class="member-info">
+				<b>{{ post.title }}</b> by <b>Dr. {{ post.doctor.user.first_name }} {{ post.doctor.user.last_name }}</b> on <small>{{ post.post_date }}</small>
+	<br><br>
+	<a href="{% url 'reports:report_details_doc' post.pk %}">view report</a>
+			  <h4>Patient Name: {{ patient.user.first_name }} {{ patient.user.last_name }}</h4>
+			  <h5>Pregnancy Month: {{ patient.pregnancy_month }} </h5><br>
+			  <a href="{% url 'reports:patient_history_detail' patient.pk %}"><button type="button" class="btn btn-outline-info">Patient History</button></a>
+			  <!-- <div class="social">
+				<a href=""><i class="ri-twitter-fill"></i></a>
+				<a href=""><i class="ri-facebook-fill"></i></a>
+				<a href=""><i class="ri-instagram-fill"></i></a>
+				<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+			  </div> -->
+			</div>
+		  </div>
+		</div>
+		{% endif %}
+	   {% endfor %}
+	  </div>
+	</div>
+  </section>

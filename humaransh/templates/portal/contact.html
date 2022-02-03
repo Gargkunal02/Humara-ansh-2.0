@@ -1,0 +1,400 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html> <!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Bingo One page parallax responsive HTML Template ">
+  
+  <meta name="author" content="Themefisher.com">
+
+  <title>CONTACT-US</title>
+
+<!-- Mobile Specific Meta
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+   <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{% static '/signup/images/favicon.png' %}" />
+  
+  <!-- CSS
+  ================================================== -->
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="{% static '/signup/plugins/themefisher-font/style.css' %}">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="{% static '/signup/plugins/bootstrap/css/bootstrap.min.css' %}">
+  <!-- Lightbox.min css -->
+  <link rel="stylesheet" href="{% static '/signup/plugins/lightbox2/dist/css/lightbox.min.css' %}">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static '/signup/plugins/animate/animate.css' %}">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="{% static '/signup/plugins/slick/slick.css' %}">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static '/signup/css/style.css' %}">  
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+  <!--Font awesome icons-->
+  <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+
+
+</head>
+
+<body id="body">
+
+ <!--
+  Start Preloader
+  ==================================== -->
+  <div id="preloader">
+    <div class='preloader'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div> 
+  <!--
+  End Preloader
+  ==================================== -->
+
+
+  
+
+<!--
+Fixed Navigation
+==================================== -->
+<header class="navigation fixed-top">
+  <div class="container">
+    <!-- main nav -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <!-- logo -->
+      <a class="navbar-brand logo" href="index.html">
+        <img class="logo-default" src="{% static '\signup\images\Logo (2).png' %}" alt="logo" style="width: 150px;"/>
+        <img class="logo-white" src="{% static '\signup\images\whitelogo.png' %}" alt="logo" style="width: 150px;"/>
+      </a>
+      <!-- /logo -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ml-auto text-center">
+          <li class="nav-item dropdown deactivate">
+            <a class="nav-link" href="{% url 'signup' %}" id="navbarDropdown" role="button" 
+              aria-haspopup="true" aria-expanded="false">
+              Home
+            </a>
+            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="index.html">Homepage</a>
+              <a class="dropdown-item" href="onepage-slider.html">Onepage</a>
+              <a class="dropdown-item" href="onepage-text.html">Onepage 2</a>
+            </div>  -->
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#service">Services</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#testimonial">Testimonial</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'portal:team' %}">Team</a>
+          </li>
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="pricing.html">Pricing</a>
+          </li> -->
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'portal:Contact_Us' %}">Contact</a>
+          </li>
+		  <li class="nav-item ">
+            <a class="nav-link" class="btn btn-transparent" href="{% url 'portal:login' %}">Login</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Pages
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="404.html">404 Page</a>
+              <a class="dropdown-item" href="blog.html">Blog Page</a>
+              <a class="dropdown-item" href="single-post.html">Blog Single Page</a>
+            </div> -->
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /main nav -->
+  </div>
+</header>
+<!--
+End Fixed Navigation
+==================================== -->
+
+<section class="single-page-header" >
+	<div class="container">
+    
+		<div class="row">
+			<div class="col-md-12">
+        <!-- <img src="{% static 'signup\images\slider\holding-hands.jpg'' %}"  width="100%"> -->
+        <h2 style="font-size: 4rem;position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%);color:white;">CONTACT US</h2>
+				<ol class="breadcrumb header-bradcrumb">
+				  <!-- <li><a href="index.html">Home</a></li>
+				  <li class="active">Contact Us</li> -->
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+ <!--Start Contact Us
+	=========================================== -->		
+<section class="contact-us" id="contact">
+	<div class="container">
+		<div class="row">
+			
+			<!-- section title -->
+			<div class="col-12">
+			<div class="title text-center" >
+				<h2>Get In Touch</h2>
+				<p>We are always available for you.<br>Got any Query? HIT US UP!!</p>
+				<div class="border"></div>
+			</div>
+			</div>
+			<!-- /section title -->
+			
+			<!-- Contact Details -->
+			<div class="contact-details col-md-6 " >
+				<h3>Contact Details</h3>
+				<ul class="contact-short-info" >
+					<li>
+						<i class="tf-ion-ios-home"></i>
+						<span>Thapar Institute of Engineering and Technology, Patiala, Punjab</span>
+					</li>
+					<li>
+						<i class="tf-ion-android-phone-portrait"></i>
+						<span>Phone: +91 95608-46414</span>
+					</li>
+					<li>
+						<i class="tf-ion-android-globe"></i>
+						<span>Pin Code: 147004</span>
+					</li>
+					<li>
+						<i class="tf-ion-android-mail"></i>
+						<span>Email: humaraansh@thapar.edu</span>
+					</li>
+				</ul>
+				<!-- Footer Social Links -->
+				<div class="social-icon">
+					<ul>
+						<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
+						<li><a href="#"><i class="tf-ion-social-instagram"></i></a></li>
+						<li><a href="#"><i class="tf-ion-social-dribbble-outline"></i></a></li>
+						<li><a href="#"><i class="tf-ion-social-linkedin-outline"></i></a></li>
+					</ul>
+				</div>
+				<!--/. End Footer Social Links -->
+			</div>
+			<!-- / End Contact Details -->
+				
+			<!-- Contact Form -->
+
+			<div class="contact-form col-md-6 " >
+				<form method="POST" action="#">
+          {% csrf_token %}
+					<div class="form-group">
+						<input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
+					</div>
+					
+					<div class="form-group">
+						<input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
+					</div>
+					
+					<div class="form-group">
+						<input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">
+					</div>
+					
+					<div class="form-group">
+						<textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>	
+					</div>
+					
+					<div id="success" class="success">
+						Thank you. The Mailman is on His Way :)
+					</div>
+					
+					<div id="error" class="error">
+						Sorry, don't know what happened. Try later :(
+					</div> 
+					<div id="cf-submit">
+						<input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit" name="submit">
+					</div>						
+					
+				</form>
+			</div>
+			<!-- ./End Contact Form -->
+		
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+</section> <!-- end section -->
+
+
+<!--================================
+=            Google Map            =
+=================================-->
+<section class="map">
+    <div class="container">
+      <div class="d-block mb-5 pb-4" style="padding-top: 30px !important; padding-bottom: 30px !important;">
+        <div class="mapclass mb-5" id='map' style='width: 100%; height: 500px;'></div>
+
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYW5rdXIyNTExIiwiYSI6ImNrb2g5Z2Z6ejBuaTYzMmxjODd3ZnFnazkifQ.huFPLhgyH_XiXcrIkvv0pw';
+        var map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [76.365124,30.35365], // starting position [lng, lat]
+            zoom: 14.5// starting zoom
+        });
+        var marker = new mapboxgl.Marker()
+          .setLngLat([76.3647,30.3564])
+          .addTo(map);
+        </script>
+
+	<!-- Google Map -->
+	{% comment %} <div id="map_canvas"></div> {% endcomment %}
+</section>
+<!--====  End of Google Map  ====-->
+
+
+
+<footer id="footer" class="bg-one">
+  <div class="top-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <h3>About</h3>
+          <p>From pre to post, Humara Ansh is dedicated to remain a constant. <br>
+            A virtual journal you would want to track and cherish years later!</p>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <ul>
+            <li><h3>Our Services</h3></li>
+            <li><a href="#">Connect with a Doctor</a></li>
+            <li><a href="#">Parental Education</a></li>
+            <li><a href="#">Video Guide</a></li>
+            <li><a href="#">Buy Medicines</a></li>
+          </ul>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+        <!-- <div class="col-sm-3 col-md-3 col-lg-3">
+          <ul>
+            <li><h3>Quick Links</h3></li>
+            <li><a href="#"></a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQ’s</a></li>
+            <li><a href="#">Badges</a></li>
+          </ul> -->
+        <!-- </div> -->
+        <!-- End of .col-sm-3 -->
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <ul>
+            <li><h3>Connect with us Socially</h3></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Youtube</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
+        <!-- End of .col-sm-3 -->
+
+      </div>
+    </div> <!-- end container -->
+  </div>
+  <div class="footer-bottom">
+     <h5>@ Copyright 2021. All rights reserved.</h5> 
+    <h6>Designed and Developed by <a href="">Network_Issue_Tha</a></h6>
+  </div>
+</footer> <!-- end footer -->
+
+
+    <!-- end Footer Area
+    ========================================== -->
+
+
+    
+     <!-- 
+    Essential Scripts
+    =====================================-->
+    <!-- Main jQuery -->
+    <script src="{% static '/signup/plugins/jquery/jquery.min.js' %}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+    <script  src="{% static '/signup/plugins/google-map/gmap.js' %}"></script>
+
+    <!-- Form Validation -->
+    <script src="{% static '/signup/plugins/form-validation/jquery.form.j' %}s"></script> 
+    <script src="{% static '/signup/plugins/form-validation/jquery.validate.min.js' %}"></script>
+    
+    <!-- Bootstrap4 -->
+    <script src="{% static '/signup/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- Parallax -->
+    <script src="{% static '/signup/plugins/parallax/jquery.parallax-1.1.3.js' %}"></script>
+    <!-- lightbox -->
+    <script src="{% static '/signup/plugins/lightbox2/dist/js/lightbox.min.js' %}"></script>
+    <!-- Owl Carousel -->
+    <script src="{% static '/signup/plugins/slick/slick.min.js' %}"></script>
+    <!-- filter -->
+    <script src="{% static '/signup/plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+    <!-- Smooth Scroll js -->
+    <script src="{% static '/signup/plugins/smooth-scroll/smooth-scroll.min.js' %}"></script>
+    
+    <!-- Custom js -->
+    <script src="{% static '/signup/js/script.js' %}"></script>
+    <script>
+  function initMap() {
+    var uluru = {
+      lat: 30.21,
+        lng: 76.21
+    };
+    var grayStyles = [{
+      featureType: "all",
+      stylers: [{
+        saturation: -90
+      },
+      {
+        lightness: 50
+      }
+      ]
+    },
+    {
+      elementType: 'labels.text.fill',
+      stylers: [{
+        color: '#ccdee9'
+      }]
+    }
+    ];
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: 30.21,
+            lng: 76.21
+      },
+      zoom: 9,
+      styles: grayStyles,
+      scrollwheel: false
+    });
+  }
+</script>
+
+
+  </body>
+  </html>

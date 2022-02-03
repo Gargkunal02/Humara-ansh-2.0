@@ -1,0 +1,24 @@
+{% extends 'portal/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<h1	style="margin-top: 100px;">Report</h1>
+{% if user.is_authenticated %}
+<ul style="list-style-type: none;">
+{% if user.id == post.patient.user.id %}	
+<li>
+	<p>Title: <b>{{ post.title }}</b></p>
+	<p>Doctor: <b>Dr. {{ post.doctor.username }}</b> </p>
+	<p>Date: <b>{{ post.post_date }}</b></p>
+	<p>Short Description:<b>{{ post.body }}</b></p>
+	<br><br>
+	<iframe src="{{ post.file.url }}" type="application/pdf" height="1000px" width="1000">
+	</iframe>
+	<hr>
+</li>
+{% endif %}
+</ul>
+{% endif %}
+</div>
+{% endblock %}
+

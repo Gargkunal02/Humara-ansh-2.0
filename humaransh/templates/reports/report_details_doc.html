@@ -1,0 +1,16 @@
+{% extends 'portal/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<h1 style="margin-top: 100px;">Report</h1>
+{% if user.is_authenticated %}
+	<b>{{ post.title }}</b> by <b>Dr. {{ post.doctor.username }}</b> on {{ post.post_date }}
+	<br><br>
+	{{ post.body }}
+	<br><br>
+	<iframe src="{{ post.file.url }}" type="application/pdf" height="1000px" width="1000">
+	</iframe>
+	<hr>
+{% endif %}
+</div>
+{% endblock %}

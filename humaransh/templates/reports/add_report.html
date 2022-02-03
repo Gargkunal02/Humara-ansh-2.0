@@ -1,0 +1,44 @@
+{% extends 'portal/base.html' %}
+{% block title %}
+new report
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container">
+<h1>Add New Report</h1>
+<br/><br/>
+<div class="form-group">
+<form method="POST" enctype="multipart/form-data" id="addPost" > 
+{% comment %} data-patients-url="{% url 'reports:ajax_load_patients' %}" novalidate> {% endcomment %}
+	{% csrf_token %}
+	{{ form.as_p }}
+	{% comment %} <table>
+	{{ form.as_table }}
+	</table> {% endcomment %}
+	{{ form.media }}
+	<button class="btn btn-secondary">
+		Post
+	</button>
+</form>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	var doctorId = "{{ user.id }}";
+	document.getElementById('sanya').value = doctorId;
+	{% comment %} var url = $("#addPost").attr("data-patients-url");
+	$.ajax({
+			url: url,
+			data: {
+				'doctor': doctorId
+			},
+			success: function(data){
+				$('id_patient').html(data);
+			}
+	}); {% endcomment %}
+</script>
+{% else %}
+You are not logged in!
+{% endif %}
+{% endblock %}

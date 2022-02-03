@@ -1,0 +1,144 @@
+{% extends 'portal/base.html' %}
+{% load static %}
+{% comment %} <link rel="stylesheet" type="text/css" href="{% static 'reports/card.css' %}"> {% endcomment %}
+{% block title %}
+select doctor
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container">
+<h1 style="margin-top: 100px;">Select Doctor</h1>
+{% if user.is_authenticated %}
+
+
+<form action="{% url 'reports:choice' %}" method="post" id="form1">
+{% csrf_token %}
+
+{% for doctor in object_list %}
+
+    <label>
+    <input type="radio" name="doc" class="card-input-element" value="{{ doctor.user.id }}"/>
+        {% comment %} <div class="card">
+         <div class="card-body">
+            <p>{{ doctor.user.first_name }} {{ doctor.user.last_name }}</p>
+            <p>Speciality: {{ doctor.specialist }}</p>
+            <p>hospital: {{ doctor.hospital }}</p>
+            <p>experience: {{doctor.experience_years}} years </p>
+        </div>
+        </div> {% endcomment %}
+		<section id="doctors" class="doctors">
+			<div class="container">
+			  <div class="row">
+				{% comment %} {% for doctor in object_list %} {% endcomment %}
+				<div class="col-lg-6">
+				  <div class="member d-flex align-items-start">
+					<div class="pic"><img src="{% static 'assets/img/doctors/doctors-1.jpg' %}" class="img-fluid" alt=""></div>
+					<div class="member-info">
+					  <h4>Dr. {{ doctor.user.first_name}} {{ doctor.user.last_name}}</h4>
+					  <span>{{ doctor.specialist }}</span>
+					  <p>works at {{ doctor.hospital }} and has experience of {{ doctor.experience_years }} years</p>
+					  <!-- <div class="social">
+						<a href=""><i class="ri-twitter-fill"></i></a>
+						<a href=""><i class="ri-facebook-fill"></i></a>
+						<a href=""><i class="ri-instagram-fill"></i></a>
+						<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+					  </div> -->
+					</div>
+				  </div>
+				</div>
+    </label>   
+<br>
+
+{% endfor %}
+</form>
+<button type="submit" form="form1" value="Submit">Submit</button>
+<br/><br/>
+</div>
+{% endif %}
+{% endif %}
+{% endblock %}
+
+
+
+{% comment %} <div class="container" id="c">
+      <div class="col-md-4 col-lg-4 col-sm-4">
+        <label>
+          <input type="radio" name="doc" class="card-input-element" />
+            <div class="panel panel-default card-input">
+              <div class="panel-heading">{{ doctor.user.first_name }} {{ doctor.user.last_name }}</div>
+              <div class="panel-body">
+                <p>Specialist in {{ doctor.specialist }}</p>
+                <p>works at hospital {{ doctor.hospital }}</p>
+                <p>with {{doctor.experience_years}} years of experience</p>
+              </div>
+            </div>
+
+        </label>
+        
+      </div>
+</div> {% endcomment %}
+
+{% comment %} {% extends 'base.html' %}
+{% load hitcount_tags %}
+{% load extras %}
+{% load static %}
+{% block content %}
+<h1>Selected</h1>
+<ul style="list-style-type: none;">
+	<section>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row">
+{% for post in object_list %}
+{% if user in post.likes.all %}
+<li>
+// to be edited
+				<div class="col-sm">
+					<div class="card">
+						<div class="card-img-top">
+							<img src="{% static 'blog/images/2.jpg' %}" class="img-responsive">
+						</div>
+						<div class="news-content">
+							<span class="categories">Tag</span>
+							<div class="post-meta">
+								<span class="author">
+									<small><i class="fa fa-user" aria-hidden="true"></i> <b>{{ post.author.first_name}} {{ post.author.last_name}}</b></small>
+								</span>
+								<span class="time">
+									<small><i class="fa fa-clock-o" aria-hidden="true"></i> <b>{{ post.post_date|date }}</b></small>
+								</span>
+								<span class="read pull-right">
+									<small><i class="fa fa-book" aria-hidden="true"></i> <b>{{ post.body|readtime }}</b></small>
+								</span>
+								<!-- <span class="views pull-right">
+									<a href="#"><small><i class="fa fa-eye" aria-hidden="true"></i> <b>{% get_hit_count for post %}</b></small></a>
+								</span> -->
+								<div class="clearfix"></div>
+							</div>
+							<a href="{% url 'post_details' post.pk %}">
+							<h4 class="post-header">{{ post.title }}</h4>
+							</a>
+							<p>
+								{{ post.body|striptags|truncatewords:20}} <a href="{% url 'post_details' post.pk %}">Read more</a> 
+							</p>
+							{% if user.id == post.author.id %}
+							<small><a href="{% url 'update_post' post.pk %}">Edit</a></small>
+							<small><a href="{% url 'delete_post' post.pk %}">Delete</a></small>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+<!-- <a href="{% url 'post_details' post.pk %}">{{ post.title }}</a> - <small>{{ post.author.first_name}} {{ post.author.last_name}} | {{ post.post_date }} IST | Views: {% get_hit_count for post %} | {{ post.body|readtime }}</small><br>{{ post.body|safe|truncatewords:30}} <a href="{% url 'post_details' post.pk %}">Read more</a>  -->
+<br><br>
+</li>
+<!-- <br/><br/> -->
+{% endif %}
+{% endfor %}
+</div>
+		</div>
+	</div>
+</section>
+</ul>
+
+{% endblock %} {% endcomment %}
