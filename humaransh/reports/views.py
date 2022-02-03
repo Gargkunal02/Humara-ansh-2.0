@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, edit
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, edit, TemplateView
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from .models import Post
@@ -17,13 +17,39 @@ class SelectView(ListView):
 # 	# model = Doctor
 # 	template_name = '.html'
 
-class AddPostView(CreateView):
-	model = Post
-	# form_class = PostForm
-	template_name = 'reports/add_report.html'
 
-	# class Meta:
-	# 	Post.parent.choice = Post.doctor.user.id
+# class AddPostView(ListView):
+# 	model = Patient
+# 	template_name = 'reports/patient_dropdown_list_options.html'
+# 	context_object_name = 'patient'
+
+# 	def get_context_data(self, *args, **kwargs):
+# 		context = super(AddPostView, self).get_context_data(**kwargs)
+# 		context[self.context_object_name] = get_object_or_404(Patient.objects.all())
+# 		return context
+
+# 	class Meta:
+# 		Post.parent.choice = Post.doctor.user.id
+
+def post_view(request):
+	patient = Patient.objects.all()
+	context={
+        'patient':patient,
+    }
+
+	if request.method == 'POST':
+		title = request.POST['title']
+		doctor = request.POST['doctor']
+		doctor = Doctor.objects.get(pk=doctor)
+		patient = request.POST['patient']
+		patient = Patient.objects.get(pk=patient)
+		body = request.POST['body']
+		file = request.FILES.get('file', False)
+		post = Post(title=title,doctor=doctor,patient=patient,body=body,file=file)
+		post.save()
+		print(post)
+		return render(request, 'reports/add_report.html', context)
+	return render(request, 'reports/add_report.html', context)
 
 def load_patients(request):
 	doctor_id = request.GET.get('doctor')

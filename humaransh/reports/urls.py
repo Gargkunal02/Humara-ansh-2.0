@@ -5,7 +5,7 @@ app_name = 'reports'
 
 urlpatterns = [
     # path('', views.HomeView.as_view(), name="home"),
-    path('add_post/',views.AddPostView.as_view(),name="add_post"),
+    path('add_post/',views.post_view,name="add_post"),
     path('select_doctor/', views.SelectView.as_view(), name='select_doctor'),
     path('choice/', views.choice, name='choice'),
     path('my_feed/',views.FeedView.as_view(),name="my_feed"),
